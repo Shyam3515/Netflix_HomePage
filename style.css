@@ -1,0 +1,240 @@
+html,body{
+    background-color: black;
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+.container{
+    width:100%;
+    max-width: 1250px;
+    margin:0 auto;
+}
+/* Scroll bar hidden */
+*::-webkit-scrollbar{
+    display:none;
+}
+
+.head-cont{
+    display:flex;
+    justify-content: space-between;
+}
+header{
+    background:transparent;
+    position:fixed;
+    left:0;
+    top:0;
+    width: 100%;
+    padding:0 10px;
+    z-index:10;
+    transition: background-color 500ms;
+}
+.header-bg{
+    background-color: black;
+}
+.left-container, .right-container{
+    display:flex;
+    align-items: center;
+}
+.right-container svg,.right-container img{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.logo{
+    max-width: 120px;
+}
+.main-nav{
+    list-style: none;
+    display:inline-flex;
+    /* display:none; */
+}
+.nav-item{
+    margin-right: 20px;
+    color: #e5e5e5;
+    cursor: pointer;
+    opacity:0.8;
+}
+.nav-item.active{
+    color:white;
+    opacity:1;
+    /* font-weight: 500; */
+}
+.right-container svg{
+    color:white;
+}
+.right-container img{
+    max-width:36px;
+}
+
+/* Movies Section */
+.movies-section{
+    padding:5px 20px;
+
+}
+.section-heading{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color:white;
+    cursor: pointer;
+    display:inline-block;
+
+}
+.explore{
+    font-size: 12px;
+    color:#54b9c5;
+    display: none;
+}
+.section-heading:hover .explore{
+    display: inline-block;
+}
+.movie-row-cont{
+    display:flex; 
+}
+.movies-row{
+    position:relative;
+    display:flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.image{
+    display:flex;
+}
+.img-item{
+    display:block;
+    width:245px;
+    object-fit: contain;
+    padding:8px 4px;
+    border-radius: 6px;
+}
+h4{
+    position:absolute;
+    color:#e5e5e5;
+}
+.img-item:hover{
+    cursor: pointer;
+    transform:scale(1.2);
+    transition: transform linear 300ms;
+}
+
+/* Banner Section */
+.banner-section{
+    min-height: 98vh;
+    padding-top: 80px;
+    position: relative;
+    /* background: url(https://image.tmdb.org/t/p/original/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.banner-section img{
+    width:100%;
+    height:100%;
+}
+.banner-content{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    padding-top:70px;
+    padding-left: 30px;
+}
+.banner-title{
+    color:white;
+    font-size:78px;
+    max-width: 50%;
+    line-height: 1.1;
+    margin:0;
+    margin-bottom: 16px;
+}
+.banner-info{
+    color:white;
+    font-size:22px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+.banner-overview{
+    color:white;
+    font-size:16px;
+    line-height: 1.2;
+    max-width: 50%;
+}
+.action-buttons-cont{
+    display:flex;
+    align-items: center;
+}
+.action-button{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 12px;
+    margin: 10px 10px 10px 0;
+    border-radius: 4px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+}
+.action-button:last-child{
+    background-color: rgba(109, 109, 110, 0.7);
+    color:white;
+}
+.banner-fadeBottom{
+    height:120px;
+    background: linear-gradient(180deg,
+    transparent,rgba(37,37,37,.61),
+    #141414);
+    position: absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+}
+
+/* Responsive CSS */
+@media(max-width:720px){
+    .main-nav{
+        display:none;
+    }
+    .right-container{
+        display:flex;
+        justify-content: space-between;
+    }
+    header {
+        width: 100%;
+        right:0;
+    }
+    .banner-section{
+        min-height: 32vh;
+        padding:0;
+    }
+    .banner-content {
+        padding-top: 86px;
+        padding-left: 24px;
+    }
+    .banner-overview{
+        max-width: 100%;
+    }
+    .banner-title{
+        padding-top: 20px;
+        padding-left: 15px;
+        max-width: 100%;
+        font-size:38px;
+        margin:0;
+    }
+    .banner-overview{
+        display: none;
+    }
+    .banner-info{
+        padding-left: 18px;
+        font-size:15px;
+        margin-bottom: 0;
+    }
+    .action-buttons-cont{
+        padding-left: 18px;
+    }
+    .banner-fadeBottom{
+        display: none;
+    }
+} 
